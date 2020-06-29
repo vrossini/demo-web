@@ -1,0 +1,119 @@
+<main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+  <!-- <div class="pt-1 pb-1 mb-1 border-bottom">
+    <h1 class="h2">Nova Obra</h1>
+  </div> -->
+  <div class="create-page">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item active" aria-current="page">Nova obra</li>
+      </ol>
+    </nav>
+    <div class="page-content">
+      <!-- BOOTSTRAP 4 -->
+      <!-- <form class="create-form" [formGroup]="obraForm" novalidate (ngSubmit)="onSubmit(obraForm.value)">
+        <div class="form-group">
+          <label for="nome">Nome</label>
+          <input type="text" class="form-control" id="nome" placeholder="Nome">
+          <ng-container *ngFor="let validation of validation_messages.nome">
+            <mat-error *ngIf="obraForm.get('nome').hasError(validation.type) && (obraForm.get('nome').dirty || obraForm.get('nome').touched)">{{validation.message}}</mat-error>
+          </ng-container>
+        </div>
+        <div class="form-group">
+          <label for="matricula">Matrícula</label>
+          <input type="text" class="form-control" id="matricula" placeholder="Matrícula">
+          <ng-container *ngFor="let validation of validation_messages.matricula">
+            <mat-error *ngIf="obraForm.get('matricula').hasError(validation.type) && (obraForm.get('matricula').dirty || obraForm.get('matricula').touched)">{{validation.message}}</mat-error>
+          </ng-container>
+        </div>
+        <div class="form-group">
+          <label for="metragem">Metragem</label>
+          <input type="number" class="form-control" id="metragem" placeholder="Metragem">
+          <ng-container *ngFor="let validation of validation_messages.metragem">
+            <mat-error *ngIf="obraForm.get('metragem').hasError(validation.type) && (obraForm.get('metragem').dirty || obraForm.get('metragem').touched)">{{validation.message}}</mat-error>
+          </ng-container>
+        </div>
+        <div class="form-group">
+          <label for="tipoObra">Tipo de obra</label>
+          <select class="form-control" id="tipoObra">
+            <option>Residencial Multifamiliar</option>
+            <option>Residencial Unifamiliar</option>
+            <option>Comercial</option>
+            <option>Industrial</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="alvaraConstrucao">Alvará de construção</label>
+          <input type="text" class="form-control" id="alvaraConstrucao" placeholder="Alvará de construção">
+        </div>
+        <div class="form-group">
+          <label for="art">Anotação de responsabilidade técnica</label>
+          <input type="text" class="form-control" id="art" placeholder="Anotação de responsabilidade técnica">
+        </div>
+        <div class="form-group">
+          <label for="registroImovel">Registro de imóvel</label>
+          <input type="text" class="form-control" id="registroImovel" placeholder="Registro de imóvel">
+        </div>
+        <button type="submit" class="btn btn-primary" [disabled]="!obraForm.valid">Salvar</button>
+        <br><br>
+      </form> -->
+
+      <!-- MATERIAL -->
+      <div class="row">
+        <div class="col col-md-10">
+          <form class="create-form" [formGroup]="obraForm" novalidate (ngSubmit)="onSubmit(obraForm.value)">
+            <div class="form-group">
+              <mat-form-field class="input-style">
+                <input matInput placeholder="Nome" class="form-control" formControlName="nome">
+              </mat-form-field>
+              <ng-container *ngFor="let validation of validation_messages.nome">
+                <mat-error *ngIf="obraForm.get('nome').hasError(validation.type) && (obraForm.get('nome').dirty || obraForm.get('nome').touched)">{{validation.message}}</mat-error>
+              </ng-container>
+            </div>
+            <div class="form-group">
+              <mat-form-field class="input-style">
+                <input matInput placeholder="Matrícula" class="form-control" formControlName="matricula">
+              </mat-form-field>
+              <ng-container *ngFor="let validation of validation_messages.matricula">
+                <mat-error *ngIf="obraForm.get('matricula').hasError(validation.type) && (obraForm.get('matricula').dirty || obraForm.get('matricula').touched)">{{validation.message}}</mat-error>
+              </ng-container>
+            </div>
+            <div class="form-group">
+              <mat-form-field class="input-style">
+                <input matInput type="number" min="0" max="100" placeholder="Metragem" class="form-control" formControlName="metragem">
+              </mat-form-field>
+              <ng-container *ngFor="let validation of validation_messages.metragem">
+                <mat-error *ngIf="obraForm.get('metragem').hasError(validation.type) && (obraForm.get('metragem').dirty || obraForm.get('metragem').touched)">{{validation.message}}</mat-error>
+              </ng-container>
+            </div>
+            <div class="form-group">
+              <mat-form-field class="input-style">
+                <input matInput placeholder="Tipo de obra" class="form-control" formControlName="tipoObra">
+              </mat-form-field>
+            </div>
+            <div class="form-group">
+              <mat-form-field class="input-style">
+                <input matInput placeholder="Alvará de construção" class="form-control" formControlName="alvaraConstrucao">
+              </mat-form-field>
+            </div>
+            <div class="form-group">
+              <mat-form-field class="input-style">
+                <input matInput placeholder="Anotação de responsabilidade técnica" class="form-control" formControlName="art">
+              </mat-form-field>
+            </div>
+            <div class="form-group">
+              <mat-form-field class="input-style">
+                <input matInput placeholder="Registro de imóvel" class="form-control" formControlName="registroImovel">
+              </mat-form-field>
+            </div>
+            <div class="row submit-button-container">
+              <div class="col-md-4">
+                <button mat-raised-button class="submit-button" color="primary" type="submit" [disabled]="!obraForm.valid">Salvar</button>
+              </div>
+            </div>
+            <br><br>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>    
+</main>

@@ -1,0 +1,46 @@
+<div class="displayTable">
+  <div class="displayTableCell">
+
+    <div class="px-logo">
+      <!-- <a href="https://www.positronx.io" target="_blank">
+        <img src="https://www.positronx.io/wp-content/themes/positronx/img/logo-positronx-white.svg" alt="positronX.io - Learn Full Stack Development">
+      </a> -->
+    </div>
+
+    <div class="authBlock">
+      <h3>Login</h3>
+      <div class="formGroup">
+        <input type="text" class="formControl" placeholder="E-mail" #userName required>
+      </div>
+
+      <div class="formGroup">
+        <input type="password" class="formControl" placeholder="Senha" #userPassword required>
+      </div>
+
+      <!-- Calling SignIn Api from AuthService -->
+      <div class="formGroup">
+        <input type="button" class="btn btnPrimary" value="Entrar" (click)="authService.SignIn(userName.value, userPassword.value)">
+      </div>
+
+      <!-- <div class="formGroup">
+        <span class="or"><span class="orInner">Ou</span></span>
+      </div> -->
+
+      <!-- Calling GoogleAuth Api from AuthService -->
+      <!-- <div class="formGroup">
+        <button type="button" class="btn googleBtn" (click)="authService.GoogleAuth()">
+          <i class="fab fa-google-plus-g"></i>
+          Entrar com Google
+        </button>
+      </div> -->
+
+      <div class="forgotPassword">
+        <span routerLink="/forgot-password">Esqueceu a senha?</span>
+      </div>
+    </div>
+
+    <div class="redirectToLogin">
+      <span>Não tem uma conta?<span class="redirect" routerLink="/register-user"> Cadastrar</span></span>
+    </div>
+  </div>
+</div>
