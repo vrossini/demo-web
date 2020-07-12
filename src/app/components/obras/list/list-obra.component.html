@@ -21,8 +21,9 @@
     <!-- <div class="list-group"> -->
       <div *ngFor="let item of items" class="list-group-item-action align-items-start">
         <ul class="list-group">
-          <a>
-            <li class="list-group-item" (click)="viewDetails(item)">
+          <!-- routerLink="/home/obra" -->
+          <a [routerLink]="['/home/obra', item.obraUID]" [state]="{ data: item }">
+            <li class="list-group-item">
               <span class="align-middle">
                 <img src="https://placehold.it/50x50" height="50" class="mr-4">
                 {{item.nome}} - {{item.matricula}}

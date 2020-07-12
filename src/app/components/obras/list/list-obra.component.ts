@@ -40,10 +40,9 @@ export class ListObraComponent implements OnInit {
     })
   }
 
-  viewDetails(item) {
-    console.log(item);
-    // this.router.navigate(['/details/'+ item.payload.doc.id]);
-  }
+  // openObra(item) {
+  //   this.router.navigate(['/home/obra']);
+  // }
 
   capitalizeFirstLetter(value) {
     return value.charAt(0).toUpperCase() + value.slice(1);

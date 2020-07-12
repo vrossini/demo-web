@@ -1,5 +1,5 @@
 import { auth } from 'firebase/app';
-import { User } from "../services/user";
+import { User } from '../../models/user';
 import { Router } from "@angular/router";
 import { Injectable, NgZone } from '@angular/core';
 import { AngularFireAuth } from "@angular/fire/auth";

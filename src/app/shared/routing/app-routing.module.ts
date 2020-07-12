@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { ObraComponent } from '../../components/obras/obra/obra.component';
 import { HomeComponent } from '../../components/layouts/home/home.component';
 import { NewObraComponent } from '../../components/obras/new/new-obra.component';
 import { SignInComponent } from '../../components/public/sign-in/sign-in.component';
@@ -20,10 +21,12 @@ const routes: Routes = [
     component: HomeComponent,
     canActivate: [AuthGuard],
     children: [
-      { path: '', redirectTo: 'list-obra', pathMatch: 'full'},
-      { path: 'list-obra', component: ListObraComponent},
-      { path: 'new-obra', component: NewObraComponent, canActivate: [AuthGuard] },
-      { path: 'edit-obra', component: EditObraComponent, canActivate: [AuthGuard] }
+      { path: '', redirectTo: 'list-obra', pathMatch: 'full' },
+      { path: 'obra', redirectTo: 'list-obra', pathMatch: 'full'},
+      { path: 'obra/:id', component: ObraComponent },
+      { path: 'new-obra', component: NewObraComponent },
+      { path: 'list-obra', component: ListObraComponent },
+      { path: 'edit-obra', component: EditObraComponent }
     ]
   },
 
